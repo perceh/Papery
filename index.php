@@ -11,7 +11,7 @@
 		<link href="css/styles.css" type="text/css"    rel="stylesheet" /> 
 		<link  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="js/SimpleWeather.js"></script>
 		<script src="js/weather.js"></script>
 	</head>
