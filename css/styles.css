@@ -113,13 +113,12 @@ p
     transition: all .7s;
 }
 
-.collumn + .collumn 
+.collumn 
 { 
-  border-left: 1px solid #2f2f2f;
   word-wrap: break-word;
 }
 
-.collumn .headline
+.headline
 {
     text-align: center;
     line-height: normal;
@@ -127,7 +126,7 @@ p
     margin: 0 auto;
 }
 
-.collumn .headline.hl1
+.headline.hl1
 {
     font-weight: 700;
     font-size: 30px;
@@ -135,7 +134,7 @@ p
     padding: 10px 0 10px 0;
 }
 
-.collumn .headline.hl2
+.headline.hl2
 {
     font-weight: 400;
     font-style: italic;
@@ -144,7 +143,7 @@ p
     padding: 10px 0 10px 0;
 }
 
-.collumn .headline.hl2:before
+.headline.hl2:before
 {
     border-top: 1px solid #2f2f2f;
     content: '';
@@ -154,7 +153,7 @@ p
     margin: 0 auto;
 }
 
-.collumn .headline.hl2:after
+.headline.hl2:after
 {
     border-bottom: 1px solid #2f2f2f;
     content: '';
@@ -164,7 +163,7 @@ p
     margin: 0 auto;
 }
 
-.collumn .headline.hl3
+.headline.hl3
 {
     font-weight: 400;
     font-size: 30px;
@@ -173,7 +172,7 @@ p
     padding: 10px 0 10px 0;
 }
 
-.collumn .headline.hl4
+.headline.hl4
 {
     font-weight: 700;
     font-size: 12px;
@@ -181,7 +180,7 @@ p
     padding: 10px 0 10px 0;
 }
 
-.collumn .headline.hl4:before
+.headline.hl4:before
 {
     border-top: 1px solid #2f2f2f;
     content: '';
@@ -191,7 +190,7 @@ p
     margin: 0 auto;
 }
 
-.collumn .headline.hl4:after
+.headline.hl4:after
 {
     border-bottom: 1px solid #2f2f2f;
     content: '';
@@ -201,7 +200,7 @@ p
     margin: 0 auto;
 }
 
-.collumn .headline.hl5
+.headline.hl5
 {
     font-weight: 400;
     font-size: 42px;
@@ -210,7 +209,7 @@ p
     padding: 10px 0 10px 0;
 }
 
-.collumn .headline.hl6
+.headline.hl6
 {
     font-weight: 400;
     font-size: 18px;
@@ -218,7 +217,7 @@ p
     padding: 10px 0 10px 0;
 }
 
-.collumn .headline.hl6:before
+.headline.hl6:before
 {
     border-top: 1px solid #2f2f2f;
     content: '';
@@ -228,7 +227,7 @@ p
     margin: 0 auto;
 }
 
-.collumn .headline.hl6:after
+.headline.hl6:after
 {
     border-bottom: 1px solid #2f2f2f;
     content: '';
@@ -238,7 +237,7 @@ p
     margin: 0 auto;
 }
 
-.collumn .headline.hl7
+.headline.hl7
 {
     font-weight: 700;
     font-size: 12px;
@@ -247,7 +246,7 @@ p
     padding: 10px 0 10px 0;
 }
 
-.collumn .headline.hl8
+ .headline.hl8
 {
     font-weight: 700;
     font-size: 12px;
@@ -255,7 +254,7 @@ p
     padding: 10px 0 10px 0;
 }
 
-.collumn .headline.hl9
+.headline.hl9
 {
     font-weight: 700;
     font-size: 12px;
@@ -263,7 +262,7 @@ p
     padding: 10px 0 10px 0;
 }
 
-.collumn .headline.hl10
+.headline.hl10
 {
     font-weight: 700;
     font-size: 12px;
@@ -271,7 +270,7 @@ p
     padding: 10px 0 10px 0;
 }
 
-.collumn .citation
+.citation
 {
     font-size: 36px;
     line-height: 44px;
@@ -282,7 +281,7 @@ p
     margin: 40px 0 40px 0;
 }
 
-.collumn .citation:before
+ .citation:before
 {
     border-top: 1px solid #2f2f2f;
     content: '';
@@ -292,7 +291,7 @@ p
     margin: 0 auto;
 }
 
-.collumn .citation:after
+ .citation:after
 {
     border-bottom: 1px solid #2f2f2f;
     content: '';
@@ -302,12 +301,12 @@ p
     margin: 0 auto;
 }
 
-.collumn .figure 
+ .figure 
 {
   margin: 0 0 20px;
 }
 
-.collumn .figcaption
+ .figcaption
 {
 	font-style: italic;
 	font-size: 12px;

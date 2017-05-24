@@ -16,7 +16,6 @@
 		<script src="js/weather.js"></script>
 	</head>
 	<body id="paperbody">
-
 		<div class="head">
 		    <div class="headerobjectswrapper">
 		        <div class="weatherforcastbox"><span>Weatherforcast for today: </span><br><div id="weather"> </div></div>
@@ -24,11 +23,72 @@
 		    </div>
 		    <div class="subhead">Goirle - <?php echo date("l j F Y"); ?> - Price: Free</div>
 		</div>
-		<article>
-			<h1></h1>
-		</article>
-		
 
+		<div class="articles">
+			<article class="collumn">
+				<h1 class="headline hl3">Welkom</h1>
+				<h2 class="headline hl4">ondertitel</h2>
+				<p>
+					ncjdsbcuibdsouc ducbdsbcoudsbcoub
+				</p>
+			</article>
+
+			<article class="collumn">
+				<h1 class="headline hl3">Welkom</h1>
+				<h2 class="headline hl4">ondertitel</h2>
+				<p>
+					ncjdsbcuibdsouc ducbdsbcoudsbcoub
+				</p>
+			</article>
+
+			<article class="collumn">
+				<h1 class="headline hl3">Welkom</h1>
+				<h2 class="headline hl4">ondertitel</h2>
+				<p>
+					ncjdsbcuibdsouc ducbdsbcoudsbcoub
+				</p>
+			</article>
+
+			<article class="collumn">
+				<h1 class="headline hl3">Welkom</h1>
+				<h2 class="headline hl4">ondertitel</h2>
+				<p>
+					ncjdsbcuibdsouc ducbdsbcoudsbcoub
+				</p>
+			</article>
+
+			<article class="collumn">
+				<h1 class="headline hl3">Welkom</h1>
+				<h2 class="headline hl4">ondertitel</h2>
+				<p>
+					ncjdsbcuibdsouc ducbdsbcoudsbcoub
+				</p>
+			</article>
+
+			<article class="collumn">
+				<h1 class="headline hl3">Welkom</h1>
+				<h2 class="headline hl4">ondertitel</h2>
+				<p>
+					ncjdsbcuibdsouc ducbdsbcoudsbcoub
+				</p>
+			</article>
+
+			<article class="collumn">
+				<h1 class="headline hl3">Welkom</h1>
+				<h2 class="headline hl4">ondertitel</h2>
+				<p>
+					ncjdsbcuibdsouc ducbdsbcoudsbcoub
+				</p>
+			</article>
+
+			<article class="collumn">
+				<h1 class="headline hl3">Welkom</h1>
+				<h2 class="headline hl4">ondertitel</h2>
+				<p>
+					ncjdsbcuibdsouc ducbdsbcoudsbcoub
+				</p>
+			</article>
+		</div>
 	</body>
 </html>
 
