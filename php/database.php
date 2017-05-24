@@ -5,12 +5,7 @@ define('DBHOST', 'localhost');
 define('DBUSER', 'root');
 define('DBPASS', '');
 define('DBNAME', 'portfolio');
-/*
-define('DBHOST', 'localhost');
-define('DBUSER', 'rickyrek');
-define('DBPASS', 'aJO1o9lf56');
-define('DBNAME', 'rickyrek_port');
-*/
+
 // Create connection
 $conn = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
 
