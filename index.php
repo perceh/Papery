@@ -14,12 +14,15 @@
 		<div class="head">
 		    <div class="headerobjectswrapper">
 		        <div class="weatherforcastbox"><span>Weatherforcast for today: </span><br><div id="weather"> </div></div>
-		        <header id="rickytimes">The Ricky Times</header>
+		        <header id="rickytimes">The Papery Times</header>
 		    </div>
 		    <div class="subhead">Goirle - <?php echo date("l j F Y"); ?> - Price: Free</div>
 		</div>
 
 		<div class="articles">
+			
+		</div>
+		<div class="articlesFade">
 			
 		</div>
 	</body>
