@@ -1,4 +1,22 @@
 $(document).ready(function(){
+  
+  
+  function browserWidth() {
+  	$loadAmount = 0;
+  	if ($(window).width() >= 1200) {
+  		$loadAmount = 20;
+  	}
+  	 else if ($(window).width() < 1200 && $(window).width() >= 700) {
+  	 	$loadAmount = 10;
+  	 }
+  	 else if ($(window).width() < 700) {
+  	 	$loadAmount = 3;
+  	 }
+  	 console.log($loadAmount);
+  }
+
+browserWidth();
+
   var increaseArticles = 0;
   //get the first 10 articles from the database query in database.php
   $.ajax({
@@ -6,7 +24,7 @@ $(document).ready(function(){
     url: "php/database.php",
     data: {
       'offset': 0,
-      'limit': 10
+      'limit': $loadAmount
     },
     success: function(data){
       $('.articles').append(data);
@@ -22,7 +40,7 @@ $(document).ready(function(){
   $(window).scroll(function(){
     if($(window).scrollTop() >= $(document).height() - $(window).height()){
 
-      // If there is no Ajax resquest pending
+      // If there is no Ajax request pending
       if(!ajaxRunning && !allResultsReceived){
         $.ajax({
           type: "GET",

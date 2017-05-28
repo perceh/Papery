@@ -377,26 +377,6 @@ p
   display: flex;
 }
 
-.containeritems article 
-{ 
-  -webkit-box-flex: auto;
-  -ms-flex: auto;
-  flex: auto; 
-  width: 200px; 
-  margin: .5vw; 
-}
-
-.containeritems article img 
-{ 
-  width: 100%; 
-  height: auto; 
-}
-
-@media screen and (max-width: 400px) {
-  .containeritems div { margin: 0; }
-  .containeritems { padding: 0; }
-}
-
 .project_image 
 {
     width: 100%;
