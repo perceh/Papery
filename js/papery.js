@@ -1,10 +1,16 @@
 $(document).ready(function(){
   
-  
+  var settings = {
+  option1: 'good', 
+  option2: {name: 'bad'}, 
+ }
+
+ //if (settings.option1 == 'good') alert("hi");
+
   function browserWidth() {
   	$loadAmount = 0;
   	if ($(window).width() >= 1200) {
-  		$loadAmount = 20;
+  		$loadAmount = 15;
   	}
   	 else if ($(window).width() < 1200 && $(window).width() >= 700) {
   	 	$loadAmount = 10;
@@ -15,7 +21,10 @@ $(document).ready(function(){
   	 console.log($loadAmount);
   }
 
-browserWidth();
+  browserWidth();
+
+
+  authenticFilter();
 
   var increaseArticles = 0;
   //get the first 10 articles from the database query in database.php
@@ -38,16 +47,16 @@ browserWidth();
 
   //scroll down to load the next batch of 10
   $(window).scroll(function(){
-    if($(window).scrollTop() >= $(document).height() - $(window).height()){
+    if($(window).scrollTop() >= $(document).height() - $(window).height()-100){
 
-      // If there is no Ajax request pending
+      // Check if there is no Ajax request pending
       if(!ajaxRunning && !allResultsReceived){
         $.ajax({
           type: "GET",
           url: "php/database.php",
           data: {
             'offset': increaseArticles,
-            'limit': 10
+            'limit': $loadAmount
           },
           success: function(data){
             $('.articlesFade').append(data).hide().fadeIn(1000);
@@ -64,9 +73,19 @@ browserWidth();
           }
         });
 
-        // Set flag to true to prevent concurring ajax resquest.
+        // Set flag to true to prevent concurring ajax request.
         ajaxRunning=true;
       }
     }
   });
+jQuery(function() {
+
+    $("img").addClass("authenticFilter");
+
+});
+
+  function authenticFilter() {
+  	
+  	$(".authenticFilter").css({"filter": "sepia(80%) grayscale(1) contrast(1) opacity(0.7)", "-webkit-filter": "sepia(80%) contrast(1) opacity(0.7)"});
+  }
 });

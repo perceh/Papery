@@ -32,6 +32,7 @@ if(isset($_GET['offset']) && isset($_GET['limit'])){
 							<p>
 								'. $row['article_small'] .'
 							</p>
+							<img src="http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg">
 						</article>';
                 }
         }
