@@ -1,7 +1,7 @@
 $(document).ready(function(){
   
   var settings = {
-  option1: 'good', 
+  authenticFilter: 'on', 
   option2: {name: 'bad'}, 
  }
 
@@ -23,9 +23,13 @@ $(document).ready(function(){
 
   browserWidth();
 
-
-  authenticFilter();
-
+  function authenticFilter() {
+  	if (settings.authenticFilter == 'on'){
+	  	$("img").addClass("authenticFilter");
+	  	$(".authenticFilter").css({"filter": "sepia(80%) grayscale(1) contrast(1) opacity(0.7)", "-webkit-filter": "sepia(80%) contrast(1) opacity(0.7)"});
+  	}
+  }
+ 
   var increaseArticles = 0;
   //get the first 10 articles from the database query in database.php
   $.ajax({
@@ -38,6 +42,7 @@ $(document).ready(function(){
     success: function(data){
       $('.articles').append(data);
       increaseArticles += 10;
+      authenticFilter();
     }
   });
 
@@ -61,6 +66,7 @@ $(document).ready(function(){
           success: function(data){
             $('.articlesFade').append(data).hide().fadeIn(1000);
             increaseArticles += 10;
+            authenticFilter();
 
             var howManyResult = (data.match(/.collumn/g) || []).length;
 
@@ -78,14 +84,4 @@ $(document).ready(function(){
       }
     }
   });
-jQuery(function() {
-
-    $("img").addClass("authenticFilter");
-
-});
-
-  function authenticFilter() {
-  	
-  	$(".authenticFilter").css({"filter": "sepia(80%) grayscale(1) contrast(1) opacity(0.7)", "-webkit-filter": "sepia(80%) contrast(1) opacity(0.7)"});
-  }
 });
