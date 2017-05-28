@@ -1,12 +1,13 @@
 $(document).ready(function(){
   
   var settings = {
-  authenticFilter: 'on', 
-  option2: {name: 'bad'}, 
+  authenticFilter: 'on', //binds a authentic paper filter to your images on/off
+  randomizeHeaders: {state: 'on', topHeader: 'h1', secondHeader: 'h2'}, 
  }
 
  //if (settings.option1 == 'good') alert("hi");
 
+//check browsersize on load and change load amount accordingly
   function browserWidth() {
   	$loadAmount = 0;
   	if ($(window).width() >= 1200) {
@@ -20,7 +21,7 @@ $(document).ready(function(){
   	 }
   	 console.log($loadAmount);
   }
-
+//console.log(settings.randomizeHeaders.state);
   browserWidth();
 
   function authenticFilter() {
@@ -29,7 +30,36 @@ $(document).ready(function(){
 	  	$(".authenticFilter").css({"filter": "sepia(80%) grayscale(1) contrast(1) opacity(0.7)", "-webkit-filter": "sepia(80%) contrast(1) opacity(0.7)"});
   	}
   }
- 
+/*
+  function randomizeHeaders() {
+  	if (settings.randomizeHeaders.state == 'on'){
+	  	var topHeader = ["hl1", "hl3", "hl5"];
+	  	var randomtopHeader = topHeader[Math.floor(Math.random() * topHeader.length)];
+	  	$(settings.randomizeHeaders.topHeader).addClass(randomtopHeader);
+  	}
+  }
+ */
+/*
+function randOrd() {
+    return (Math.round(Math.random())-0.5); 
+}
+
+function randomizeHeaders() {
+    var klasses = ["hl1", "hl3", "hl5"];
+    klasses.sort(randOrd);
+    $('.collumn h1').each(function(i, val) {
+        $(this).addClass(klasses[i]);
+    });
+}
+*/
+function randomizeHeaders() {
+  var classes = ["hl1", "hl3"];
+
+    $('.collumn ' + settings.randomizeHeaders.topHeader).each(function(){
+        $(this).addClass(classes[~~(Math.random()*classes.length)]);
+    });
+}
+
   var increaseArticles = 0;
   //get the first 10 articles from the database query in database.php
   $.ajax({
@@ -43,6 +73,7 @@ $(document).ready(function(){
       $('.articles').append(data);
       increaseArticles += 10;
       authenticFilter();
+      randomizeHeaders();
     }
   });
 
@@ -67,6 +98,7 @@ $(document).ready(function(){
             $('.articlesFade').append(data).hide().fadeIn(1000);
             increaseArticles += 10;
             authenticFilter();
+            randomizeHeaders();
 
             var howManyResult = (data.match(/.collumn/g) || []).length;
 

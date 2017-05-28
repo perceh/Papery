@@ -27,8 +27,8 @@ if(isset($_GET['offset']) && isset($_GET['limit'])){
             while($row = mysqli_fetch_assoc($data)) 
                 {
                 	echo'<article class="collumn">
-							<h1 class="headline hl3">'. $row['title'] . '</h1>
-							<h2 class="headline hl4">'. $row['title_small'] .'</h2>
+							<h1 class="headline">'. $row['title'] . '</h1>
+							<h2 class="headline">'. $row['title_small'] .'</h2>
 							<p>
 								'. $row['article_small'] .'
 							</p>
