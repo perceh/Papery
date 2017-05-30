@@ -2,7 +2,7 @@ $(document).ready(function(){
   
 var settings = {
 	authenticFilter: 'on', //binds a authentic paper filter to your images on/off
-	randomizeHeaders: {state: 'on', topHeader: 'h1', bottomHeader: 'h2'}, 
+	randomizeHeaders: {state: 'on', topHeader: 'h1', bottomHeader: 'h2'}, //state turns the functionality to randomize header styles on/off, set topheader/botoomheader with class or element from html
 }
 
 //check browsersize on load and change load amount accordingly
@@ -24,8 +24,8 @@ var settings = {
 
 	function authenticFilter() {
 		if (settings.authenticFilter == 'on'){
-	  	$("img").addClass("authenticFilter");
-	  	$(".authenticFilter").css({"filter": "sepia(80%) grayscale(1) contrast(1) opacity(0.7)", "-webkit-filter": "sepia(80%) contrast(1) opacity(0.7)"});
+		  	$("img").addClass("authenticFilter");
+		  	$(".authenticFilter").css({"filter": "sepia(80%) grayscale(1) contrast(1) opacity(0.7)", "-webkit-filter": "sepia(80%) contrast(1) opacity(0.7)"});
 		}
 	}
 
@@ -42,6 +42,17 @@ var settings = {
 	    });
 	}
 
+	function hoverFilter() {
+		$("img").hover(
+		  function () {
+		    $("img").css({"filter": " ", "-webkit-filter": " "});
+		  },
+		  function () {
+		    $("img").css({"filter": "sepia(80%) grayscale(1) contrast(1) opacity(0.7)", "-webkit-filter": "sepia(80%) contrast(1) opacity(0.7)"});
+		  }
+		);
+	}
+
 	var increaseArticles = 0;
 //get the first 10 articles from the database query in database.php
 	$.ajax({
@@ -56,6 +67,7 @@ var settings = {
 		  increaseArticles += 10;
 		  authenticFilter();
 		  randomizeHeaders();
+		  //hoverFilter();
 		}
 	});
 
@@ -81,6 +93,7 @@ var settings = {
 	        increaseArticles += 10;
 	        authenticFilter();
 	        randomizeHeaders();
+	        //hoverFilter();
 
 	        var howManyResult = (data.match(/.collumn/g) || []).length;
 
@@ -97,5 +110,5 @@ var settings = {
 	        ajaxRunning=true;
 	      }
 	    }
-	  });
 	});
+});

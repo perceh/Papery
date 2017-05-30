@@ -19,12 +19,12 @@ if(isset($_GET['offset']) && isset($_GET['limit'])){
 	$limit = $_GET['limit'];
 
 	//database query
-	$query = "SELECT * FROM articles ORDER BY created_article DESC LIMIT $limit OFFSET $offset";
+	$query = "SELECT * FROM articles ORDER BY created_article DESC LIMIT $limit OFFSET $offset"; //replace the articles and created_article with your database row names
 	$data = mysqli_query($conn, $query);
 
 	if (mysqli_num_rows($data) > 0) 
         {
-            while($row = mysqli_fetch_assoc($data)) 
+            while($row = mysqli_fetch_assoc($data)) //replace the row's with your database row names
                 {
                 	echo'<article class="collumn">
 							<h1 class="headline">'. $row['title'] . '</h1>
