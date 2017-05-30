@@ -24,7 +24,7 @@ if(isset($_GET['offset']) && isset($_GET['limit'])){
 
 	if (mysqli_num_rows($data) > 0) 
         {
-            while($row = mysqli_fetch_assoc($data)) //replace the row's with your database row names
+            while($row = mysqli_fetch_assoc($data)) //replace the row's with your database row names and your own image
                 {
                 	echo'<article class="collumn">
 							<h1 class="headline">'. $row['title'] . '</h1>
@@ -32,7 +32,7 @@ if(isset($_GET['offset']) && isset($_GET['limit'])){
 							<p>
 								'. $row['article_small'] .'
 							</p>
-							<img src="http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg">
+							<img src="https://cdn.pixabay.com/photo/2016/02/01/00/56/news-1172463_960_720.jpg"> 
 						</article>';
                 }
         }

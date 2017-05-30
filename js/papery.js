@@ -1,8 +1,9 @@
 $(document).ready(function(){
   
 var settings = {
-	authenticFilter: 'on', //binds a authentic paper filter to your images on/off
+	authenticFilter: 'off', //binds a authentic paper filter to your images on/off
 	randomizeHeaders: {state: 'on', topHeader: 'h1', bottomHeader: 'h2'}, //state turns the functionality to randomize header styles on/off, set topheader/botoomheader with class or element from html
+	hoverFilter: 'on',  //binds a authentic paper filter to your images & unveils the original immage if a user hovers over it on/off
 }
 
 //check browsersize on load and change load amount accordingly
@@ -43,14 +44,16 @@ var settings = {
 	}
 
 	function hoverFilter() {
-		$("img").hover(
-		  function () {
-		    $("img").css({"filter": " ", "-webkit-filter": " "});
-		  },
-		  function () {
-		    $("img").css({"filter": "sepia(80%) grayscale(1) contrast(1) opacity(0.7)", "-webkit-filter": "sepia(80%) contrast(1) opacity(0.7)"});
-		  }
-		);
+		if (settings.hoverFilter == 'on'){
+			$("img").addClass("authenticFilter");
+			  	$(".authenticFilter").css({"filter": "sepia(80%) grayscale(1) contrast(1) opacity(0.7)", "-webkit-filter": "sepia(80%) contrast(1) opacity(0.7)"});
+
+			$("img").mouseenter(function() {
+	    			$(this).css("filter", "sepia(0%) contrast(1) opacity(1)").css("-webkit-filter", "sepia(0%) contrast(1) opacity(1)");
+				}).mouseleave(function() {
+	     			$(this).css("filter", "sepia(80%) grayscale(1) contrast(1) opacity(0.7)").css("-webkit-filter", "sepia(80%) contrast(1) opacity(0.7)");
+			});
+		}
 	}
 
 	var increaseArticles = 0;
@@ -67,7 +70,7 @@ var settings = {
 		  increaseArticles += 10;
 		  authenticFilter();
 		  randomizeHeaders();
-		  //hoverFilter();
+		  hoverFilter();
 		}
 	});
 
@@ -77,38 +80,37 @@ var settings = {
 
 //scroll down to load the next batch of 10
 	$(window).scroll(function(){
-	if($(window).scrollTop() >= $(document).height() - $(window).height()-100){
+		if($(window).scrollTop() >= $(document).height() - $(window).height()-100){
+			  // Check if there is no Ajax request pending
+			if(!ajaxRunning && !allResultsReceived){
+			    $.ajax({
+			      type: "GET",
+			      url: "php/database.php",
+			      data: {
+			        'offset': increaseArticles,
+			        'limit': $loadAmount
+			      },
+			     	 success: function(data){
+				        $('.articlesFade').append(data).hide().fadeIn(1000);
+				        increaseArticles += 10;
+				        authenticFilter();
+				        randomizeHeaders();
+				        hoverFilter();
 
-	  // Check if there is no Ajax request pending
-	  if(!ajaxRunning && !allResultsReceived){
-	    $.ajax({
-	      type: "GET",
-	      url: "php/database.php",
-	      data: {
-	        'offset': increaseArticles,
-	        'limit': $loadAmount
-	      },
-	      success: function(data){
-	        $('.articlesFade').append(data).hide().fadeIn(1000);
-	        increaseArticles += 10;
-	        authenticFilter();
-	        randomizeHeaders();
-	        //hoverFilter();
+				        var howManyResult = (data.match(/.collumn/g) || []).length;
 
-	        var howManyResult = (data.match(/.collumn/g) || []).length;
+				        if(howManyResult!=10){
+				          allResultsReceived=true;    // Disable all future request call.
+				        }
 
-	        if(howManyResult!=10){
-	          allResultsReceived=true;    // Disable all future request call.
-	        }
+				        // Reset flag;
+				        ajaxRunning=false;
+			    	}
+			    });
 
-	        // Reset flag;
-	        ajaxRunning=false;
-	      }
-	        });
-
-	        // Set flag to true to prevent concurring ajax request.
-	        ajaxRunning=true;
-	      }
-	    }
+			        // Set flag to true to prevent concurring ajax request.
+			        ajaxRunning=true;
+			}
+		}	
 	});
 });
