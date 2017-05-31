@@ -2,10 +2,10 @@
 
 if(isset($_GET['offset']) && isset($_GET['limit'])){
 	//De database connectie word hier aangemaakt
-	define('DBHOST', 'localhost');
-	define('DBUSER', 'root');
-	define('DBPASS', '');
-	define('DBNAME', 'portfolio');
+	define('DBHOST', 'YOURHOST');
+	define('DBUSER', 'YOURUSERNAME');
+	define('DBPASS', 'YOURDBPASSWORD');
+	define('DBNAME', 'YOURDBNAME');
 	// Create connection
 	$conn = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
 

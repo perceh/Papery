@@ -5,7 +5,7 @@ Papery offers a few tools like "lazy loading" and image filters that can give yo
 
 ## Code Example
 
-## Setup
+## Installation
 Install Papery by downloading the ZIP from Github and copying at least the following files into your project: "papery.js", "database.php" and "jquery-3.2.1.min.js" (or download the lastest version of jquery and link it in your head). 
 
 ### PHP
@@ -43,20 +43,51 @@ The HTML structure is pretty straight foreward. In order to lazy load articles m
 </div>
 ```
 
-### Papery.js
-Papery.js requires very little configuration and can be configurated in the variable "settings" at the top of the file. The various functions of Papery can be set on/off from here. Some functions like randomizeHeaders have secondary configurations in which you can set the HTML element to suit your own HTML document setup.
+### Papery.js settings
+Papery requires very little configuration and can be configurated  by setting settings at the top of the file. The various functions of Papery can be set on/off from here. Some functions like randomizeHeaders have secondary configurations in which you can set the HTML element to suit your own HTML document setup. Every function except the lazy loading is by default turned off. The following settings can be set by using this structure
 ```
-var settings = {
-	authenticFilter: 'off', 
-	randomizeHeaders: {state: 'on', topHeader: 'h1', bottomHeader: 'h2'}, 
-	hoverFilter: 'on',  
-}
+<script>
+	$(document).ready(function(){
+		var settings = {YOUR PREFERRED SETTINGS};
+		var papery = new Papery(settings);
+	});
+</script>
+```
+
+All settings applied like in the demo would look like the following
+```
+<script>
+	$(document).ready(function(){
+		var settings = {authenticFilter: 'on', randomizeHeaders: {state: 'on', topHeaderElement: 'h1', bottomHeaderElement: 'h2', topHeaderClass: ["hl1", "hl3"], bottomHeaderClass: ["hl4", "hl2"]}, hoverFilter: 'on'};
+		var papery = new Papery(settings);
+	});
+</script>
+```
+
+#### An authentic newspaper filter
+An authentic newspaper filter can be applied to all your images by copy pasting the following setting between the settings.  
+
+```
+  authenticFilter: 'on'
+```
+
+#### Randomize article headers
+To make your articles dynamic and look like a real newspaper you can randomize your article headers. To use this functionality you must edit the settings in your head and set "state" to "on", declare the HTML element or class you use for either or both your article headers by setting the topHeaderElement and the bottomHeaderElement and to apply the styles you made in css to the titles you must set topHeaderClass and bottomHeaderClass to the corresponding CSS classes. Copy paste the settings below in the settings in your HTML and edit the values to your project setup. 
+
+```
+randomizeHeaders: {state: 'on', topHeaderElement: 'YOUR_TOP_HEADER', bottomHeaderElement: 'YOUR_SUB_HEADER', topHeaderClass: ["YOUR_TOP_HEADER_CLASSES"], bottomHeaderClass: ["YOUR_BOTTOM_HEADER_CLASSES"]}
+```
+
+#### Hoverfilter
+Hoverfilter applies the authentic newspaper filter to all your images, but if your hover over them you can see the full resolution colorised image. To turn this functionality on copy paste the following in your settings.
+```
+hoverFilter: 'on'
 ```
 
 ## History of Papery
 
 Sometimes portfolio websites all feel the same. The ol' bootstrap onepager with the graph section about how good you might be at "webdevelopment", while being as unoriginal as you can be. I (Ricky Rekkers)
-felt that my portfolio should contain something of me, something authentic. I am a storyteller and that is what I did on my portfolio. I created articles about my passions and my past projects and turned them into an actual online newspaper design. Not only did I give my website certain characteristics, but I also stood out while having job interviews! With the release of Papery, so can you!
+felt that my portfolio should contain something of me, something authentic. I am a storyteller and that is what I did on my portfolio. I created articles about my passions and my past projects and turned them into an actual online newspaper design. Papery gave this portfolio an extra boost, some extra functionality & optimalisation which is needed for the current state of the web. Not only did I give my website certain characteristics, but I also stood out while having job interviews! With the release of Papery, so can you! 
 
 
 ## Contributors

@@ -21,7 +21,7 @@ a
     #newspaper mark-up
 \*------------------------------------*/
 
-#paperbody
+body
 {
     font-family: "Times New Roman", Georgia, Serif; /* fallback voor als het lettertype niet ontvangen wordt*/
     font-size: 14px;
