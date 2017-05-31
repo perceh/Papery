@@ -51,6 +51,7 @@ var settings = {
 	randomizeHeaders: {state: 'on', topHeader: 'h1', bottomHeader: 'h2'}, 
 	hoverFilter: 'on',  
 }
+```
 
 ## Motivation
 
