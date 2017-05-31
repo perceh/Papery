@@ -3,7 +3,8 @@
 Newspapers are artifacts from the past nowadays, but for those who would like to bring journalism in the form of articles or even a real newspaper website can use Papery to do so.
 Papery offers a few tools like "lazy loading" and image filters that can give your blog, website or portfolio an authentic newspaper look and feeling on today's web. 
 
-## Code Example
+## Demo
+An demo can be found on [My Website](http://rickyrekkers.nl/Papery/index.php)
 
 ## Installation
 Install Papery by downloading the ZIP from Github and copying at least the following files into your project: "papery.js", "database.php" and "jquery-3.2.1.min.js" (or download the lastest version of jquery and link it in your head). 
@@ -93,6 +94,9 @@ felt that my portfolio should contain something of me, something authentic. I am
 ## Contributors
 
 For questions or if you want to contribute in making Papery better you can tweet me at [@PE_Despian](https://twitter.com/peDespian "My Twitter")!
+
+## Testing
+This Framework has succesfully been tested by Monique Van Der Harst and Bart Knuppeveld.
 
 ## License
 
