@@ -10,7 +10,7 @@ An demo can be found on [My Website](http://rickyrekkers.nl/Papery/index.php)
 Install Papery by downloading the ZIP from Github and copying at least the following files into your project: "papery.js", "database.php" and "jquery-3.2.1.min.js" (or download the lastest version of jquery and link it in your head). 
 
 ### PHP
-Papery requires a database connection to load the articles which is established in database.php
+Papery requires a database connection to load the articles which is established in database.php. A SQL database file has been added to the PHP folder of the project to test.
 ```
 define('DBHOST', 'YOURHOST');
 define('DBUSER', 'YOURHOSTUSERNAME');
