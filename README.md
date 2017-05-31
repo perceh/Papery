@@ -1,7 +1,7 @@
 ## Papery, your newspaper on the web
 
 Newspapers are artifacts from the past nowadays, but for those who would like to bring journalism in the form of articles or even a real newspaper website can use Papery to do so.
-Papery offers a few tools like "lazy loading" and image filters that can turn your website into a newspaper with the technology of the web of today. 
+Papery offers a few tools like "lazy loading" and image filters that can give your blog, website or portfolio an authentic newspaper look and feeling on today's web. 
 
 ## Code Example
 
@@ -18,7 +18,7 @@ define('DBNAME', 'YOURDATABASE');
 ```
 Fill in your own database details and the name of the database you want to use for your articles
 
-Ìn the PHP file you also declare the structure of your website. The "collumn" class has to be assigned to the top HTML element, which in the case of the demo is `<article>`. H1's, H2's and P's can be named differently or not be present in your website structure. In the demo we load "title" from the database as our article title, "title_small" as our sub-title and "article_small" as our article and main text. You can either change the HTML structure here and replace the titles and article in `$row['YOURDATABASEROW']` which whatever you want to load from your database.
+Ìn the PHP file (database.php) you also declare the structure of your website. The "collumn" class has to be assigned to the top HTML element, which in the case of the demo is `<article>`. H1's, H2's and P's can be named differently or not be present in your website structure. In the demo we load "title" from the database as our article title, "title_small" as our sub-title and "article_small" as our article and main text. You can either change the HTML structure here and replace the titles and article in `$row['YOURDATABASEROW']` which whatever you want to load from your database.
 
 ```
 <article class="collumn">
@@ -32,7 +32,7 @@ Fill in your own database details and the name of the database you want to use f
 ```
 
 ### HTML
-The HTML structure is pretty straight foreward. In order to lazy load articles make sure to assign the articles class to one div and articlesFade to another. 
+The HTML structure is pretty straight foreward. In order to lazy load articles make sure to assign the articles class to one div and articlesFade to another on the page you want to add the several functions on. 
 ```
 <div class="articles">
 			
@@ -53,26 +53,36 @@ var settings = {
 }
 ```
 
-## Motivation
+## History of Papery
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+Sometimes portfolio websites all feel the same. The ol' bootstrap onepager with the graph section about how good you might be at "webdevelopment", while being as unoriginal as you can be. I (Ricky Rekkers)
+felt that my portfolio should contain something of me, something authentic. I am a storyteller and that is what I did on my portfolio. I created articles about my passions and my past projects and turned them into an actual online newspaper design. Not only did I give my website certain characteristics, but I also stood out while having job interviews! With the release of Papery, so can you!
 
-## Installation
-
-Provide code examples and explanations of how to get the project.
-
-## API Reference
-
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
-
-## Tests
-
-Describe and show how to run the tests with code examples.
 
 ## Contributors
 
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
+For questions or if you want to contribute in making Papery better you can tweet me at [@PE_Despian](https://twitter.com/peDespian "My Twitter")!
 
 ## License
 
-A short snippet describing the license (MIT, Apache, etc.)
+MIT License
+
+Copyright (c) [2017] [Ricky Jason Rekkers]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
