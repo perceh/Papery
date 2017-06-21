@@ -1,13 +1,13 @@
 ## Papery, your newspaper on the web
 
 Newspapers are artifacts from the past nowadays, but for those who would like to bring journalism in the form of articles or even a real newspaper website can use Papery to do so.
-Papery offers a few tools like "lazy loading" and image filters that can give your blog, website or portfolio an authentic newspaper look and feeling on today's web. 
+Papery offers a few tools like "lazy loading" and image filters that can give your blog, website or portfolio an authentic newspaper look and feeling on todays web. 
 
 ## Demo
 An demo can be found on [My Website](http://rickyrekkers.nl/Papery/index.php)
 
 ## Installation
-Install Papery by downloading the ZIP from Github and copying at least the following files into your project: "papery.js", "database.php" and "jquery-3.2.1.min.js" (or download the lastest version of jquery and link it in your head). 
+Install Papery by downloading the ZIP from Github and copying at least the following files into your project: "papery.js", "database.php" and "jquery-3.2.1.min.js" or your own jQuery link (Papery is compatible from jQuery Core version 1.3). 
 
 ### PHP
 Papery requires a database connection to load the articles which is established in database.php. A SQL database file has been added to the PHP folder of the project to test.
@@ -45,7 +45,7 @@ The HTML structure is pretty straight foreward. In order to lazy load articles m
 ```
 
 ### Papery.js settings
-Papery requires very little configuration and can be configurated  by setting settings at the top of the file. The various functions of Papery can be set on/off from here. Some functions like randomizeHeaders have secondary configurations in which you can set the HTML element to suit your own HTML document setup. Every function except the lazy loading is by default turned off. The following settings can be set by using this structure
+Papery requires very little configuration and can be configurated  by setting settings at the top of the file. The various functions of Papery can be set on/off from here. Some functions like randomizeHeaders have secondary configurations in which you can set the HTML element to suit your own HTML document set-up. Every function except the lazy loading is by default turned off. The following settings can be set by using this structure
 ```
 <script>
 	$(document).ready(function(){
@@ -55,15 +55,21 @@ Papery requires very little configuration and can be configurated  by setting se
 </script>
 ```
 
-All settings applied like in the demo would look like the following
+All settings applied like in the demo would look like the following:
 ```
 <script>
 	$(document).ready(function(){
-		var settings = {authenticFilter: 'on', randomizeHeaders: {state: 'on', topHeaderElement: 'h1', bottomHeaderElement: 'h2', topHeaderClass: ["hl1", "hl3"], bottomHeaderClass: ["hl4", "hl2"]}, hoverFilter: 'on'};
+		var settings = {
+			authenticFilter: 'on',
+			randomizeHeaders: {topHeaderElement: 'h1', bottomHeaderElement: 'h2', topHeaderClass: ["hl1", "hl3"], bottomHeaderClass: ["hl4", "hl2"]},
+			hoverFilter: 'on',
+			screenSizeLoadamount: {monitor: 15, tablet: 10, mobile: 3}
+		};
 		var papery = new Papery(settings);
 	});
 </script>
 ```
+Setting a setting the state of authenticFilter or hoverFilter "on" means that it will bind to an image. If you set any element screenSizeLoadamount or randomizeHeader it will overwrite the default setting you declared in the settings.
 
 #### An authentic newspaper filter
 An authentic newspaper filter can be applied to all your images by copy pasting the following setting between the settings.  
@@ -73,10 +79,10 @@ An authentic newspaper filter can be applied to all your images by copy pasting 
 ```
 
 #### Randomize article headers
-To make your articles dynamic and look like a real newspaper you can randomize your article headers. To use this functionality you must edit the settings in your head and set "state" to "on", declare the HTML element or class you use for either or both your article headers by setting the topHeaderElement and the bottomHeaderElement and to apply the styles you made in css to the titles you must set topHeaderClass and bottomHeaderClass to the corresponding CSS classes. Copy paste the settings below in the settings in your HTML and edit the values to your project setup. 
+To make your articles dynamic and look like a real newspaper you can randomize your article headers. The default settings for this functionality are applied to the topHeaderElement: `<h1>` and bottomHeaderElement: `<h2>`. The default settings apply the css styles randonly to user-defined classes which are by default "hl1" and "hl3" and must be defined in the css. To to apply the styles you made in css to the titles you must set topHeaderClass and bottomHeaderClass to the corresponding CSS classes. Copy paste the settings below in the settings in your HTML and edit the values to your project set-up. 
 
 ```
-randomizeHeaders: {state: 'on', topHeaderElement: 'YOUR_TOP_HEADER', bottomHeaderElement: 'YOUR_SUB_HEADER', topHeaderClass: ["YOUR_TOP_HEADER_CLASSES"], bottomHeaderClass: ["YOUR_BOTTOM_HEADER_CLASSES"]}
+randomizeHeaders: {topHeaderElement: 'YOUR_TOP_HEADER', bottomHeaderElement: 'YOUR_SUB_HEADER', topHeaderClass: ["YOUR_TOP_HEADER_CLASSES"], bottomHeaderClass: ["YOUR_BOTTOM_HEADER_CLASSES"]}
 ```
 
 #### Hoverfilter
@@ -84,6 +90,14 @@ Hoverfilter applies the authentic newspaper filter to all your images, but if yo
 ```
 hoverFilter: 'on'
 ```
+
+###Responsive loading
+Papery is responsive and standardly loads less articles if the screenwidth gets smaller. Papery loads by default 3 articles on mobile devices, 10 on tablets and 15 on monitors. If you wish to load more articles you can do so by adjusting the setting you wish to be changed. If you set monitor to 30 articles in the settings and not define the rest of the screen sizes, Papery will default to the default settings. To edit the amount of loaded articles by screensizes is:
+```
+
+```
+//15 = greater than 1200px | 10 = between 700px and 1200px |  3 = below 700 px
+screenSizeLoadamount: {monitor: 15, tablet: 10, mobile: 3} 
 
 ## History of Papery
 
@@ -96,7 +110,7 @@ felt that my portfolio should contain something of me, something authentic. I am
 For questions or if you want to contribute in making Papery better you can tweet me at [@PE_Despian](https://twitter.com/peDespian "My Twitter")!
 
 ## Testing
-This Framework has succesfully been tested by Monique Van Der Harst and Bart Knuppeveld.
+This Framework has succesfully been tested by Cas Hutten, Timo de Bressera nd Bart Knuppeveld.
 
 ## License
 

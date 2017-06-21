@@ -32,7 +32,7 @@ if(isset($_GET['offset']) && isset($_GET['limit'])){
 							<p>
 								'. $row['article_small'] .'
 							</p>
-							<img src="https://cdn.pixabay.com/photo/2016/02/01/00/56/news-1172463_960_720.jpg"> 
+							<img src="https://media1.britannica.com/eb-media/25/93825-004-A21EC811.jpg"> 
 						</article>';
                 }
         }
