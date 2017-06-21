@@ -4,10 +4,12 @@ var Papery = function (settings) {
 			randomizeHeaders: {state: 'off', topHeaderElement: 'h1', bottomHeaderElement: 'h2', topHeaderClass: ["hl1", "hl3"], bottomHeaderClass: ["hl4", "hl2"]}, //state turns the functionality to randomize header styles on/off, set topheader/botoomheader with class or element from html
 			hoverFilter: 'off',  //binds a authentic paper filter to your images & unveils the original immage if a user hovers over it on/off
 		}
-
+		
+		var options = $.extend(true, defaultSettings , settings);
 		var ajaxRunning=false; //flag
 		var allResultsReceived=false; //flag
 		var increaseArticles = 0;
+		 
 
 		//check browsersize on load and change load amount accordingly TODO user declares loadamount
 		Papery.checkBrowserwidth = function(loadAmount) {
@@ -27,39 +29,24 @@ var Papery = function (settings) {
 		Papery.checkBrowserwidth();
 
 		Papery.authenticFilter = function() { //object start
-			if (defaultSettings.authenticFilter == 'on' || typeof settings.authenticFilter !== 'undefined'){
+			if (this.authenticFilter == 'on'){
 			  	$("img").addClass("authenticFilter");
 			  	$(".authenticFilter").css({"filter": "sepia(80%) grayscale(1) contrast(1) opacity(0.7)", "-webkit-filter": "sepia(80%) contrast(1) opacity(0.7)"});
 			}
 		}
 
 		Papery.randomizeHeaders = function() { 
-			if (typeof settings.randomizeHeaders !== 'undefined'){
-				if (typeof settings.randomizeHeaders.topHeaderClass !== 'undefined' && typeof settings.randomizeHeaders.topHeaderElement !== 'undefined') {
-				    $('.collumn ' + settings.randomizeHeaders.topHeaderElement).each(function(){
-				        $(this).addClass(settings.randomizeHeaders.topHeaderClass[~~(Math.random()*settings.randomizeHeaders.topHeaderClass.length)]);
-				    });
-				}
-				if (typeof settings.randomizeHeaders.bottomHeaderClass !== 'undefined' && typeof settings.randomizeHeaders.bottomHeaderElement !== 'undefined') {
-				    $('.collumn ' + settings.randomizeHeaders.bottomHeaderElement).each(function(){
-				        $(this).addClass(settings.randomizeHeaders.bottomHeaderClass[~~(Math.random()*settings.randomizeHeaders.bottomHeaderClass.length)]);
-				    });
-				}
-			}
-			else
-			{
-				$('.collumn ' + defaultSettings.randomizeHeaders.topHeaderElement).each(function(){
-			        $(this).addClass(defaultSettings.randomizeHeaders.topHeaderClass[~~(Math.random()*defaultSettings.randomizeHeaders.topHeaderClass.length)]);
+				$('.collumn ' + options.randomizeHeaders.topHeaderElement).each(function(){
+			        $(this).addClass(options.randomizeHeaders.topHeaderClass[~~(Math.random()*options.randomizeHeaders.topHeaderClass.length)]);
 			    });
 
-			    $('.collumn ' + defaultSettings.randomizeHeaders.bottomHeaderElement).each(function(){
-			        $(this).addClass(defaultSettings.randomizeHeaders.bottomHeaderClass[~~(Math.random()*defaultSettings.randomizeHeaders.bottomHeaderClass.length)]);
+			    $('.collumn ' + options.randomizeHeaders.bottomHeaderElement).each(function(){
+			        $(this).addClass(options.randomizeHeaders.bottomHeaderClass[~~(Math.random()*options.randomizeHeaders.bottomHeaderClass.length)]);
 			    });
-			}
 		}
 
 		Papery.hoverFilter = function() {
-			if (defaultSettings.hoverFilter == 'on' || typeof settings.hoverFilter !== 'undefined'){
+			if (options.hoverFilter == 'on'){
 				$("img").addClass("authenticFilter");
 				  	$(".authenticFilter").css({"filter": "sepia(80%) grayscale(1) contrast(1) opacity(0.7)", "-webkit-filter": "sepia(80%) contrast(1) opacity(0.7)"});
 
