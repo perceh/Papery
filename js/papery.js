@@ -1,7 +1,7 @@
 var Papery = function (settings) {
 		var defaultSettings = {
 			authenticFilter: 'off', //binds a authentic paper filter to your images on/off
-			randomizeHeaders: {state: 'off', topHeaderElement: 'h1', bottomHeaderElement: 'h2', topHeaderClass: ["hl1", "hl3"], bottomHeaderClass: ["hl4", "hl2"]}, //state turns the functionality to randomize header styles on/off, set topheader/botoomheader with class or element from html
+			randomizeHeaders: {topHeaderElement: 'h1', bottomHeaderElement: 'h2', topHeaderClass: ["hl1", "hl3"], bottomHeaderClass: ["hl4", "hl2"]}, //state turns the functionality to randomize header styles on/off, set topheader/botoomheader with class or element from html
 			hoverFilter: 'off',  //binds a authentic paper filter to your images & unveils the original immage if a user hovers over it on/off
 			screenSizeLoadamount: {monitor: 15, tablet: 10, mobile: 3},
 		}
