@@ -8,7 +8,12 @@
 		<script src="js/papery.js"></script>
 		<script>
 			$(document).ready(function(){
-				var settings = {authenticFilter: 'on', randomizeHeaders: {topHeaderElement: 'h1', bottomHeaderElement: 'h2', topHeaderClass: ["hl1", "hl3"], bottomHeaderClass: ["hl4", "hl2"]}, hoverFilter: 'on'};
+				var settings = {
+					authenticFilter: 'on',
+					randomizeHeaders: {topHeaderElement: 'h1', bottomHeaderElement: 'h2', topHeaderClass: ["hl1", "hl3"], bottomHeaderClass: ["hl4", "hl2"]},
+					hoverFilter: 'on',
+					screenSizeLoadamount: {monitor: 15, tablet: 10, mobile: 3}
+				};
 				var papery = new Papery(settings);
 			});
 		</script>
