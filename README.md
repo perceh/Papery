@@ -91,7 +91,7 @@ Hoverfilter applies the authentic newspaper filter to all your images, but if yo
 hoverFilter: 'on'
 ```
 
-### Responsive loading
+#### Responsive loading
 Papery is responsive and standardly loads less articles if the screenwidth gets smaller. Papery loads by default 3 articles on mobile devices, 10 on tablets and 15 on monitors. If you wish to load more articles you can do so by adjusting the setting you wish to be changed. If you set monitor to 30 articles in the settings and not define the rest of the screen sizes, Papery will default the other 2 to the default settings. To edit the amount of loaded articles by screensizes is:
 ```
 //monitor = greater than 1200px | tablet = between 700px and 1200px |  mobile = below 700 px
