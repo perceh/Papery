@@ -92,7 +92,7 @@ hoverFilter: 'on'
 ```
 
 ### Responsive loading
-Papery is responsive and standardly loads less articles if the screenwidth gets smaller. Papery loads by default 3 articles on mobile devices, 10 on tablets and 15 on monitors. If you wish to load more articles you can do so by adjusting the setting you wish to be changed. If you set monitor to 30 articles in the settings and not define the rest of the screen sizes, Papery will default to the default settings. To edit the amount of loaded articles by screensizes is:
+Papery is responsive and standardly loads less articles if the screenwidth gets smaller. Papery loads by default 3 articles on mobile devices, 10 on tablets and 15 on monitors. If you wish to load more articles you can do so by adjusting the setting you wish to be changed. If you set monitor to 30 articles in the settings and not define the rest of the screen sizes, Papery will default the other 2 to the default settings. To edit the amount of loaded articles by screensizes is:
 ```
 //15 = greater than 1200px | 10 = between 700px and 1200px |  3 = below 700 px
 screenSizeLoadamount: {monitor: 15, tablet: 10, mobile: 3} 
